@@ -28,17 +28,25 @@ const Header = ()=>{
 
 const Body = ()=>{
     return(
-        <div className='flex flex-col justify-center items-center mt-3'>
-            <div className='flex border border-black'>
-                <input type="text" className='w-50 shadow-lg' placeholder='search'  />
-                <CiSearch></CiSearch>
+        <div className='flex flex-col gap-8 justify-between items-center mt-3'>
+
+            <div className='flex justify-between items-center'>
+                <div className='flex border border-black'>
+                    <input type="text"  className='w-50 h-auto ' placeholder='search'/>   
+                    <CiSearch/> 
+                </div>
+                 
+                <div className='border border-black ml-12'>
+                    <button className=' bg-orange-400 p-2 border border-black'>Top Restaurants</button>
+                </div>   
             </div>
+
             <div className='flex flex-wrap'>
                 {restaurantList.map((restaurant)=>(
                     <RestaurantCard key = {restaurant.info.id} restaurantData={restaurant}/>        
                 ))}
-
             </div>
+
         </div>
     )
 }
